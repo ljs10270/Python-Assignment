@@ -1,0 +1,271 @@
+<과제 #9>
+문제 63.
+a = set(['D','C','J','K','L'])
+b = set(['L','B','E','H'])
+l = set(['D','C','J','K','L','B','E','H','A','F','I','G','M'])
+d = a | b
+e = l - d
+print(e)
+
+문제 64.
+a = {'배' : 3, '사과' : 5, '딸기' : 2, '참외' : 5}
+sum = 0
+
+for i in a:
+    if a.get(i) < 5:
+        if i == '배':
+            print(i,'는 현재',a.get(i),'개가 있으므로',5 - a.get(i),'개가 필요하며',(5 - a.get(i)) * 2000,'원의 비용이 필요합니다')
+            sum = sum + (5 - a.get(i)) * 2000
+
+        elif i == '사과':
+            print(i,'는 현재',a.get(i),'개가 있으므로',5 - a.get(i),'개가 필요하며',(5 - a.get(i)) * 1500,'원의 비용이 필요합니다')
+            sum = sum + (5 - a.get(i)) * 1500
+
+        elif i == '딸기':
+            print(i,'는 현재',a.get(i),'개가 있으므로',5 - a.get(i),'개가 필요하며',(5 - a.get(i)) * 1800,'원의 비용이 필요합니다')
+            sum = sum + (5 - a.get(i)) * 1800
+
+        elif i == '참외':
+            print(i,'는 현재',a.get(i),'개가 있으므로',5 - a.get(i),'개가 필요하며',(5 - a.get(i)) * 2300,'원의 비용이 필요합니다')
+            sum = sum + (5 - a.get(i)) * 2300
+    else:
+        print(i,'는 현재',a.get(i),'개가 있으므로 구매하실 필요가 없습니다.')
+
+print('총 비용 :',sum)
+
+문제 65.
+a = {'replace' : '대체하다', 'set' : '집합', 'int' : '정수형'}
+b = input('뜻을 알고싶은 단어를 입력하시오 : ')
+
+for i in a:
+    if b == i:
+        print(a.get(i))
+
+문제 66.
+a = 'Pithon'
+print(a)
+for i in range(len(a)):
+    if a[i] == 'i':
+        a = a.replace('i','y')
+print(a)
+
+문제 67.
+a = input('단어 입력 : ')
+b = input('어느 위치에 있는지 알고 싶은 문자(알파벳) : ')
+c = a.find(b)
+print(c + 1, '번째 위치')
+
+문제 68.
+while(True):
+    a = input('문장을 입력하세요. q 입력시 종료됩니다. :')
+    if a == 'q':
+        break
+    b = a.count(' ')
+    print('이 문장은',b + 1,'어절입니다.')
+
+문제 69.
+while(True):
+    a = input('비밀번호 생성(8자리 이상, 영문+숫자) : ')
+    if len(a) >= 8 and (a.isdigit() == False and a.isalpha() == False):
+        print('비밀번호가',a,'로 생성되었습니다')
+        break
+    else:
+        print('조건에 맞지 않으니 다시 입력하세요')
+
+문제 70.
+def c(a,b):
+    return a + b
+def d(a,b):
+    return a * b
+    
+a = int(input('첫번째 수 입력 : '))
+b = int(input('두번째 수 입력 : '))
+c = c(a,b)
+d = d(a,b)
+print('합 :',c,'곱 :',d)
+
+문제 71.
+import turtle
+
+a = int(input('한 변의 길이 : '))
+turtle.circle(a, steps = 3)
+
+문제 72.
+import math
+
+def sum(a,b,c):
+    bmi = b / math.pow(c,2)
+    return bmi
+
+a = input('이름 : ')
+b = float(input('키 : '))
+c = float(input('몸무게 : '))
+if a == '':
+    a = '익명'
+    d = sum(a,b,c)
+    print('-------------------')
+    print('이름 :',a)
+    print('키 :',b)
+    print('몸무게 :',c)
+    print('BMI :',d)
+else:
+    d = sum(a,b,c)
+    print('-------------------')
+    print('이름 :',a)
+    print('키 :',b)
+    print('몸무게 :',c)
+    print('BMI :',d)
+
+<과제 #10>
+문제 73.
+def a(b, c):
+    b.append(c)
+    print('오늘 회의에 참석할 사람은 (',end='')
+    for i in range(len(b)):
+        if i == len(b)-1:
+            print(b[i], end='')
+        else:
+            print(b[i],"',", end='')
+    print(') 입니다.')
+
+b = ['이재선','김김김','박박박']
+a(b,'최최최')
+
+문제 74.
+import turtle
+
+def a(x, y):
+    turtle.penup()
+    turtle.goto(x,y)
+    turtle.pendown()
+    turtle.circle(50,steps=4)
+
+turtle.onscreenclick(a)
+
+문제 75.
+from matplotlib import pyplot as p
+
+a = [120,56,309,220,156,23,98]
+p.bar(range(len(a)),a)
+p.show()
+
+문제 76.
+def c(b):
+    sum = 0
+    for i in range(len(b)):
+        sum = sum + b[i]
+
+    ab = sum / len(b)
+    return ab
+
+a = [1,2,3,4,5,6]
+d = c(a)
+print(d)
+
+문제 77.
+def a(i,b):
+    if i in b:
+        print('이미 존재하는 원소입니다.')
+    else:
+        b.append(i)
+        print('원소를 추가하였습니다.')
+        print(b)
+
+l = [1,2,3,4,5,6]
+a(5,l)
+a(7,l)
+
+문제 78.
+s = [90,80,70,60,50]
+sum = 0
+max = s[0]
+
+for i in range(len(s)):
+    sum = sum + s[i]
+
+    if s[i] > max:
+        max = s[i]
+
+av = sum / len(s)
+if av > 60:
+    print('평균 :',av,'가장 높은 점수:',max,' Pass')
+else:
+    print('평균 :',av,'가장 높은 점수:',max,' Fail')
+
+문제 79.
+a = input('첫번째 단어 :')
+b = input('두번째 단어 :')
+c = input('세번째 단어 :')
+d = len(a)
+e = len(b)
+f = len(c)
+g = max(d,e,f)
+h = min(d,e,f)
+
+if d == g:
+    print('가장 길이가 긴 단어 =',a)
+elif e == g:
+    print('가장 길이가 긴 단어 =',b)
+else:
+    print('가장 길이가 긴 단어 =',c)
+
+if d == h:
+    print('가장 길이가 짧은 단어 =',a)
+elif e == h:
+    print('가장 길이가 짧은 단어 =',b)
+else:
+    print('가장 길이가 짧은 단어 =',b)
+
+문제 80.
+while True:
+    a = int(input('초를 입력하시오(하루 이내) : '))
+    if a > 3600*24:
+        print('하루를 초과하였습니다. 다시 입력하세요.')
+    else:
+        h = a // 3600
+        m = a % 3600 // 60
+        c = a % 3600 % 60
+        print('시:',h,', 분:',m,', 초:',c)
+        break
+-------------------------------------------------------------------------------------------------------------
+<GUI 윈도 프로그래밍>
+from tkinter import *
+from time import *
+
+l = ["a.gif","b.gif","c.gif"]
+p = [None] * 3
+n = 0
+
+def cNext():
+    global n
+    n = n + 1
+    if n > 3:
+        n = 0
+    pt = PhotoImage(file = "C:/Users/LJS/Desktop/Computer Science/Python/과제 #9, #10/gif/"+l[n])
+    pLabel.configure(image = pt)
+    pLabel.image = pt
+
+def cPrev():
+    global n
+    n = n - 1
+    if n < 0:
+        n = 3
+    pt = PhotoImage(file = "C:/Users/LJS/Desktop/Computer Science/Python/과제 #9, #10/gif/"+l[n])
+    pLabel.configure(image = pt)
+    pLabel.image = pt
+
+window = Tk()
+window.geometry("400x600")
+window.title("윈도 프로그래밍 과제(사진앨범)")
+
+bp = Button(window, text = "<< 이전", command = cPrev)
+bn = Button(window, text = "다음 >>", command = cNext)
+
+pt = PhotoImage(file = "C:/Users/LJS/Desktop/Computer Science/Python/과제 #9, #10/gif/"+l[0])
+pLabel = Label(window, image = pt)
+
+bp.place(x=100,y=10)
+bn.place(x=200,y=10)
+pLabel.place(x=15,y=50)
+
+window.mainloop()

@@ -1,0 +1,221 @@
+<과제 #13>
+문제 93.
+from tkinter import *
+
+x1,y1,x2,y2 = 0,0,0,0
+
+def mouseClick(event):
+    global x1,y1
+    x1 = event.x
+    y1 = event.y
+
+def mouseDrop(event):
+    global x1,y1,x2,y2
+    x2 = event.x
+    y2 = event.y
+
+    canvas.create_line(x1,y1,x2,y2, width=5, fill="red")
+
+window = Tk()
+canvas = Canvas(window, height=300, width=300)
+
+canvas.bind("<Button-1>", mouseClick)
+canvas.bind("<ButtonRelease-1>", mouseDrop)
+canvas.pack()
+window.mainloop()
+
+문제 94.
+from tkinter import *
+window = Tk()
+
+photo1 = PhotoImage(file = "C:/Users/LJS/Desktop/Computer Science/Python/윈도 프로그래밍 예제, 그림/image/cat.gif")
+photo2 = PhotoImage(file = "C:/Users/LJS/Desktop/Computer Science/Python/윈도 프로그래밍 예제, 그림/image/cat2.gif")
+
+l1 = Label(window, image = photo1)
+l2 = Label(window, image = photo2)
+
+l1.pack(side=LEFT)
+l2.pack(side=LEFT)
+window.mainloop()
+
+문제 95.
+from tkinter import *
+import random
+
+btnList = [None] * 9
+fnameList = ["a.gif","b.gif","c.gif","d.gif","e.gif","dog.gif","dog2.gif","cat.gif","cat2.gif"]
+photoList = [None] * 9
+
+i, k = 0, 0
+xPos, yPos = 0, 0
+num = 0
+
+window = Tk()
+window.geometry("210x210")
+
+for i in range(0,9):
+    photoList[i] = PhotoImage(file = "C:/Users/LJS/Desktop/Computer Science/Python/윈도 프로그래밍 예제, 그림/image/" + fnameList[i])
+    btnList[i] = Button(window, image = photoList[i])
+
+random.shuffle(btnList)
+
+for i in range(0,3):
+    for k in range(0,3):
+        btnList[num].place(x=xPos, y=yPos)
+        num += 1
+        xPos += 70
+    xPos = 0
+    yPos += 70
+window.mainloop()
+
+문제 96.
+from tkinter import *
+from time import *
+
+l = ["a.gif","b.gif","c.gif"]
+p = [None] * 3
+n = 0
+
+def cNext():
+    global n
+    n = n + 1
+    if n > 3:
+        n = 0
+    pt = PhotoImage(file = "C:/Users/LJS/Desktop/Computer Science/Python/윈도 프로그래밍 예제, 그림/image/"+l[n])
+    pLabel.configure(image = pt)
+    pLabel.image = pt
+    name.configure(text = l[n])
+
+def cPrev():
+    global n
+    n = n - 1
+    if n < 0:
+        n = 3
+    pt = PhotoImage(file = "C:/Users/LJS/Desktop/Computer Science/Python/윈도 프로그래밍 예제, 그림/image/"+l[n])
+    pLabel.configure(image = pt)
+    pLabel.image = pt
+    name.configure(text = l[n])
+
+window = Tk()
+window.geometry("400x600")
+window.title("윈도 프로그래밍 (사진앨범)")
+
+bp = Button(window, text = "<< 이전", command = cPrev)
+name = Label(window, text = l[n])
+bn = Button(window, text = "다음 >>", command = cNext)
+
+pt = PhotoImage(file = "C:/Users/LJS/Desktop/Computer Science/Python/윈도 프로그래밍 예제, 그림/image/"+l[0])
+pLabel = Label(window, image = pt)
+
+bp.place(x=100,y=10)
+name.place(x=165,y=10)
+bn.place(x=200,y=10)
+pLabel.place(x=15,y=50)
+
+window.mainloop()
+
+문제 97.
+a = open("C:/Users/LJS/Desktop/Computer Science/Python/파일처리/test1.txt","w")
+
+for i in range(1, 11):
+    a.writelines(str(i) + "\n")
+a.close()
+
+<과제 #14>
+문제 98.
+a = open("C:/Users/LJS/Desktop/Computer Science/Python/파일처리/test2.txt","w")
+
+for i in range(1, 101):
+    a.writelines(str(i) + " ")
+a.close()
+
+문제 99.
+a = open("C:/Users/LJS/Desktop/Computer Science/Python/파일처리/test3.txt","w")
+
+for i in range(1, 6):
+    a.writelines("제"+str(i)+"의 아해가 무섭다고 그러오\n")
+a.close()
+
+문제 100.
+a = {"이재선" : "951027"}
+
+b = input("이름을 입력하시오 : ")
+if b in a:
+    print(a.get(b))
+
+else:
+    print("이름이 없습니다.")
+
+문제 101.
+a = open("C:/Users/LJS/Desktop/Computer Science/Python/파일처리/test1.txt","r")
+sum = 0
+
+b = a.readlines()
+
+for i in b:
+    sum += int(i)
+print(sum)
+a.close()
+
+문제 102.
+a = open("C:/Users/LJS/Desktop/Computer Science/Python/파일처리/test4.txt","r")
+b = open("C:/Users/LJS/Desktop/Computer Science/Python/파일처리/test5.txt","w")
+
+c = a.readlines()
+d = []
+for i in c:
+    e = i.replace("삐", "빠")
+    d.append(e)
+a.close()
+
+for i in d:
+    b.writelines(i)
+b.close()
+
+문제 103.
+a = open("C:/Users/LJS/Desktop/Computer Science/Python/파일처리/test5.txt","r")
+f = input("복사하여 저장할 파일의 이름을 입력하시오 : ")
+b = open("C:/Users/LJS/Desktop/Computer Science/Python/파일처리/" + f,"w")
+
+c = a.readlines()
+for i in c:
+    b.writelines(i)
+a.close()
+b.close()
+
+문제 104.
+a = open("C:/Users/LJS/Desktop/Computer Science/Python/파일처리/test7.txt","r")
+i = 0
+
+while True:
+    b = a.readline()
+    if b == "":
+        break
+    i = i + 1
+    print(i,":",b, end="")
+a.close()
+
+문제 105.
+f = input("저장할 파일의 이름을 입력하시오 : ")
+a = open("C:/Users/LJS/Desktop/Computer Science/Python/파일처리/" + f,"w")
+
+while True:
+    b = input("내용 입력 : ")
+    if b != "":
+        a.writelines(b+"\n")
+    else:
+        break
+a.close()
+
+문제 106.
+f1 = input("복사될 기존의 파일의 이름을 입력하시오 : ")
+a = open("C:/Users/LJS/Desktop/Computer Science/Python/파일처리/" + f1,"r")
+f2 = input("복사할 새로운 파일의 이름을 입력하시오 : ")
+b = open("C:/Users/LJS/Desktop/Computer Science/Python/파일처리/" + f2,"w")
+
+c = a.readlines()
+for i in c:
+    b.writelines(i)
+a.close()
+b.close()
+print(f1,"파일이",f2,"파일로 복사되었습니다")

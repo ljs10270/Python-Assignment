@@ -1,0 +1,362 @@
+<과제 #11>
+문제 81.
+a = [[],[],[],[]]
+i = 0
+count = 0
+
+while(True):
+    b = int(input('0부터 3의 배수를 입력하시오. : '))
+
+    if(b % 3 != 0):
+        print('0부터 3의 배수를 다시 입력하시오')
+        continue
+
+    else:
+        a[i].append(b)
+        count = count + 1
+
+        if count == 5:
+            count = 0
+            i = i + 1
+
+    if i == 4:
+        break
+    
+print(a)
+
+문제 82.
+tt = ((1,2,3),(4,5,6),(7,8,9))
+print(tt)
+
+문제 83.
+a = "파이썬은완전재미있어요"
+
+for i in range(len(a)):
+    if i % 2 != 0:
+        t = str.maketrans(a[i],'#')
+        b = a.translate(t)
+        a = b
+        
+print(a)
+
+문제 84.
+a = input('문자열 입력 : ')
+
+for c in a:
+        if ord('가') <= ord(c) <= ord('힣'):
+            b = True
+        else:
+            b = False
+ 
+if a.isdigit() :
+    print('숫자입니다.')
+           
+elif a.isalpha() or b:
+    print('글자입니다')
+
+elif a.isalnum() :
+    print('글자+숫자입니다')
+
+else:
+    print('모르겠습니다.')
+
+문제 85.
+a = int(input('첫 번째 수를 입력하세요 : '))
+b = input('연산자를 입력하세요(+,-,*,/,**) : ')
+c = int(input('두 번째 수를 입력하세요 : '))
+
+if b == '+':
+    print('## 계산기 :',a,b,c,'=',a+c)
+
+elif b == '-':
+    print('## 계산기 :',a,b,c,'=',a-c)
+
+elif b == '*':
+    print('## 계산기 :',a,b,c,'=',a*c)
+
+elif b == '/':
+    if c == 0:
+        print('0으로 나눌 수 없습니다.')
+    else:
+        print('## 계산기 :',a,b,c,'=',a/c)
+
+elif b == '**':
+    print('## 계산기 :',a,b,c,'=',a**c)
+
+<과제 #12>
+문제 86.
+def para_func(l):
+    sum = 0
+    for i in l:
+        sum = sum + int(i)
+
+    return sum
+
+a = []
+while(True):
+    b = input('합계를 구할 정수 입력(그만 입력시 q 입력) : ')
+
+    if b == 'q':
+        break
+
+    else:
+        a.append(b)
+
+c = para_func(a)
+print('매개변수가',len(a),'개인 함수를 호출한 결과 ==>',c)
+
+문제 87.
+from tkinter import *
+from tkinter import messagebox
+
+id = "ljs10270"
+passwd = "01089259459"
+
+def click() :
+    a = entryid.get()
+    b = entrypw.get()
+
+    if a == "":
+        messagebox.showinfo("로그인 실패","아이디를 입력해야 로그인 가능.")
+    
+    elif a != id:
+        messagebox.showinfo("로그인 실패","존재하지 않는 아이디 입니다.")
+
+    elif a == id and b != passwd:
+        messagebox.showinfo("로그인 실패","비밀번호가 틀립니다.")
+
+    else:
+        messagebox.showinfo("로그인 성공","로그인에 성공하여 창을 닫습니다.")
+        window.destroy()
+    
+window = Tk()
+labelid = Label(window, text="아이디 입력")
+labelid.pack()
+
+entryid = Entry(window)
+entryid.pack()
+
+labelpw = Label(window, text="비밀번호 입력")
+labelpw.pack()
+
+entrypw = Entry(window)
+entrypw.pack()
+
+bt = Button(window,text="로그인", command=click)
+bt.pack()
+
+window.mainloop()
+
+문제 88.
+from tkinter import *
+
+window = Tk()
+window.geometry('600x600')
+
+menubar = Menu(window)
+window.config(menu = menubar)
+mainmenu = Menu(menubar)
+
+menubar.add_cascade(label="메뉴",menu=mainmenu)
+mainmenu.add_command(label="새 파일")
+mainmenu.add_command(label="열기")
+mainmenu.add_command(label="저장")
+mainmenu.add_command(label="종료")
+
+text = Text(window, height='50')
+text.pack()
+
+window.mainloop()
+
+문제 89.
+- 넘김
+
+문제 90.
+from tkinter import *
+from tkinter import messagebox
+import math
+
+def click() :
+    a = float(entry1.get())
+    b = float(entry2.get())
+
+    sum = b / math.pow(a,2)
+    
+    if sum < 18.5:
+        messagebox.showinfo("BMI","저체중.")
+    
+    elif 18.5 <= sum <= 22.9:
+        messagebox.showinfo("BMI","정상.")
+
+    elif 23.0 <= sum <=24.9:
+        messagebox.showinfo("BMI","과체중.")
+
+    else:
+        messagebox.showinfo("BMI","비만.")
+    
+window = Tk()
+label1 = Label(window, text="키 입력")
+label1.pack()
+
+entry1 = Entry(window)
+entry1.pack()
+
+label2 = Label(window, text="몸무게 입력")
+label2.pack()
+
+entry2 = Entry(window)
+entry2.pack()
+
+bt = Button(window,text="BMI 결과 확인", command=click)
+bt.pack()
+
+window.mainloop()
+
+문제 91.
+from tkinter import *
+from tkinter import ttk
+ 
+a = []
+
+def click(value):
+    if value=='C':
+        nentry.delete(0,'end')
+        a.clear()
+        
+    else:
+        nentry.insert("end",value)
+        a.append(value)
+ 
+def op(value):
+    if not nentry.get() == '':
+        nentry.insert("end",value)
+
+        if len(a)>1:
+            b = ''
+            for i in a:
+                b = b + i
+            a.clear()
+            a.append(b)
+            a.append(value)
+            
+        else:
+            a.append(value)
+                
+def returns():
+    if len(a) > 3:
+        b = ''
+        for i in range(2,len(a)):
+            b = b + a[i]
+        del a[2:len(a)]
+        a.append(b)
+            
+    if not (nentry.get()==''):
+        n1 = int(a[0])
+        n2 = int(a[2])
+        
+        if a[1] == '+':
+            sum = n1+n2
+        elif a[1] == '-':
+            sum = n1-n2
+        elif a[1] == '*':
+            sum = n1*n2
+        else :
+            sum = n1/n2
+      
+        nentry.delete(0,'end')
+        nentry.insert(0,sum)
+        a.clear()
+        a.append(sum)
+
+window = Tk()
+window.geometry("500x300")
+ 
+v = StringVar(window, value='')
+ 
+nentry = ttk.Entry(window, textvariable = v, width=20)
+nentry.grid(row=0, columnspan=3) 
+
+bt_c = ttk.Button(window, text="C", command = lambda:click('C'))
+bt_c.grid(row=4, column=0)
+bt0 = ttk.Button(window, text="0", command = lambda:click('0'))
+bt0.grid(row=4, column=1)
+bt_e = ttk.Button(window, text="=", command = lambda:returns())
+bt_e.grid(row=4, column=2)
+bt_d = ttk.Button(window, text="/", command = lambda:op('/'))
+bt_d.grid(row=4, column=3)
+
+bt1 = ttk.Button(window, text="1", command = lambda:click('1'))
+bt1.grid(row=3, column=0)
+bt2 = ttk.Button(window, text="2", command = lambda:click('2'))
+bt2.grid(row=3, column=1)
+bt3 = ttk.Button(window, text="3", command = lambda:click('3'))
+bt3.grid(row=3, column=2)
+bt_m = ttk.Button(window, text="*", command = lambda:op('*'))
+bt_m.grid(row=3, column=3)
+ 
+bt4 = ttk.Button(window, text="4", command = lambda:click('4'))
+bt4.grid(row=2, column=0)
+bt5 = ttk.Button(window, text="5", command = lambda:click('5'))
+bt5.grid(row=2, column=1)
+bt6 = ttk.Button(window, text="6", command = lambda:click('6'))
+bt6.grid(row=2, column=2)
+bt_s = ttk.Button(window, text="-", command = lambda:op('-'))
+bt_s.grid(row=2, column=3)
+
+bt7 = ttk.Button(window, text="7", command = lambda:click('7'))
+bt7.grid(row=1, column=0)
+bt8 = ttk.Button(window, text="8", command = lambda:click('8'))
+bt8.grid(row=1, column=1)
+bt9 = ttk.Button(window, text="9", command = lambda:click('9'))
+bt9.grid(row=1, column=2)
+bt_a = ttk.Button(window, text="+", command = lambda:op('+'))
+bt_a.grid(row=1, column=3)  
+ 
+window.mainloop()
+
+문제 92.
+from tkinter import *
+from tkinter import messagebox
+
+def click1() :
+    a = entry1.get()
+
+    if a != '':
+        a = float(a)
+        sum = (a-32) / 1.8
+        entry2.insert(0,sum)
+
+    else:
+        messagebox.showinfo("오류","화씨온도를 입력해주세요")
+
+def click2() :
+    b = entry2.get()
+
+    if b != '':
+        b = float(b)
+        sum = (b * 1.8) + 32
+        entry1.insert(0,sum)
+
+    else:
+        messagebox.showinfo("오류","섭씨온도를 입력해주세요")
+    
+window = Tk()
+label1 = Label(window, text="화씨")
+label1.pack()
+
+entry1 = Entry(window)
+entry1.pack()
+
+label2 = Label(window, text="섭씨")
+label2.pack()
+
+entry2 = Entry(window)
+entry2.pack()
+
+bt1 = Button(window,text="화씨 -> 섭씨", command=click1)
+bt1.pack()
+
+bt2 = Button(window,text="섭씨 -> 화씨", command=click2)
+bt2.pack()
+
+window.mainloop()

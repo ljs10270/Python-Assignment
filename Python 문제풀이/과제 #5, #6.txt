@@ -1,0 +1,148 @@
+<과제 #5>
+문제 37.
+import random
+import turtle
+
+for i in range(0, 30):
+    length = random.randint(1,100)
+    turtle.forward(length)
+    angle = random.randint(-180,180)
+    turtle.left(angle)
+
+문제 38.
+sum = 0
+n = 0
+for i in range(1, 1000):
+    sum += i
+
+    if sum > 1000:
+        n = i
+        break
+print(n)
+
+문제 39.
+a =int(input('정수를 입력하시오 :'))
+if a != 0:
+    for i in range(1, a+1):
+        if a % i == 0:
+            print(i , end=' ')
+
+문제 40.
+a = input('문자열을 입력하시오 :')
+l = []
+l = a
+for i in range(len(l)-1, -1, -1):
+    print(l[i], end='')
+
+문제 41.
+for i in range(1, 10):
+    if i == 1:
+        print('*********')
+    if i == 2:
+        print(' *******')
+    if i == 3:
+        print('  *****')
+    if i == 4:
+        print('   ***')
+    if i == 5:
+        print('    *')
+    if i == 6:
+        print('   ***')
+    if i == 7:
+        print('  *****')
+    if i == 8:
+        print(' *******')
+    if i == 9:
+        print('*********')
+
+문제 42.
+a = int(input('진수로 변환할 숫자를 입력하시오 : '))
+b = int(input('입력 진수 결정(16/10/8/2) :'))
+if b != 16 and b != 10 and b != 8 and b != 2 :
+    print('16,10,8,2 숫자 중 하나만 입력하세요')
+else:
+    if b == 16:
+        print(hex(a))
+    if b == 10:
+        print(a)
+    if b == 8:
+        print(oct(a))
+    if b == 2:
+        print(bin(a))
+
+<과제 #6>
+문제 43.
+a = int(input('지페로 교환할 돈은 얼마? : '))
+print()
+if a >= 50000:
+    print('50000원짜리 ==> ', a // 50000,'장')
+    a = a % 50000
+    if a != 0:
+        print('10000원짜리 ==> ', a // 10000,'장')
+        a = a % 10000
+        print('5000원짜리 ==> ', a // 5000,'장')
+        a = a % 5000
+        print('1000원짜리 ==> ', a // 1000,'장')
+        a = a % 1000
+        print('지페로 바꾸지 못한 돈 ==> ', a,'원')
+elif a >= 10000 and a < 50000:
+    print('10000원짜리 ==> ', a // 10000,'장')
+    a = a % 10000
+    if a != 0:
+        print('5000원짜리 ==> ', a // 5000,'장')
+        a = a % 5000
+        print('1000원짜리 ==> ', a // 1000,'장')
+        a = a % 1000
+        print('지페로 바꾸지 못한 돈 ==> ', a,'원')
+else:
+    print('5000원짜리 ==> ', a // 5000,'장')
+    a = a % 5000
+    if a != 0:
+        print('1000원짜리 ==> ', a // 1000,'장')
+        a = a % 1000
+        print('지페로 바꾸지 못한 돈 ==> ', a,'원')
+
+문제 44.
+a = int(input('정수입력 : '))
+b = int(input('시프트할 숫자 입력 : '))
+print(a << b, a >> b)
+for i in range(1, b + 1):
+    print(bin(a << i), bin(a >> i))
+
+문제 45.
+a = int(input('점수 입력 : '))
+if a >= 95:
+    print('A+')
+elif a >= 90:
+    print('A0')
+elif a >= 85:
+    print('B+')
+elif a >= 80:
+    print('B0')
+elif a >= 75:
+    print('C+')
+elif a >= 70:
+    print('C0')
+elif a >= 65:
+    print('D+')
+elif a >= 60:
+    print('D0')
+else:
+    print('F')
+print('학점입니다.')
+
+문제 46.
+a = int(input('*** 첫 번째 숫자를 입력하세요 : '))
+b = int(input('*** 두 번째 숫자를 입력하세요 : '))
+c = int(input('*** 더할 숫자를 입력하세요 : '))
+sum = 0
+for i in range(a, b+1, c):
+    sum += i
+print(a,'+',a+c,'+...+',b,'는 ',sum,'입니다.')
+
+문제 47.
+sum = 0
+for i in range(0, 101):
+    if i % 7 == 0:
+        sum += i
+print('0과 100사이에 있는 7의 배수 합계:',sum)

@@ -1,0 +1,113 @@
+<프로그래밍 과제 #4>
+문제 26.
+while(True):
+    print("구구단 몇 단을 계산할까요(1~9)? <0을 입력하면 종료됩니다>")
+    a = int(input("숫자를 입력하세요 : "))
+
+    if a == 0:
+        print('종료합니다')
+        break
+
+    print('구구단 ',a,'단을 계산합니다.')
+    for j in range(1, 10):
+        print(a, '*', j, '=', a*j)
+
+문제 27.
+a =input("문자열을 입력하시오")
+m = 0
+j = 0
+
+for c in a:
+    if c in ('aeiou'):
+        m = m +1
+    else:
+        j = j +1
+
+print('자음은', j,'개 모음은 ', m, '개')
+
+문제 28.
+a = input('계좌번호를 입력하시오')
+
+if '-' in a:
+    print('-가 있으면 안됩니다')
+    a = a.replace("-","")
+print('-가 제거된 계좌번호는', a,'입니다')
+
+문제 29.
+for i in range(1, 21):
+    if i % 3 == 0 or i % 4 == 0:
+        next
+    else:
+        print(i)
+
+문제 30.
+a = int(input("소수를 판단합니다. 숫자를 입력하시오"))
+c = True
+
+if a == 1:
+    print('1은 소수가 아닙니다')
+
+for i in range(2, a):
+    if a % i == 0:
+        print('소수가 아닙니다.')
+        c = False
+        break
+if c:
+    print('소수입니다')
+        
+문제 31.
+for i in range(0,6):
+    print('*************')
+
+문제 32.
+for i in range(0, 7):
+    print(" "*(7-i), "*"*(2*i-1))
+
+문제 33.
+sum = 0
+i = 0
+
+while(True):    
+    if i == 10:
+        break
+    i = i +1
+    sum = sum +i    
+print(sum)
+
+문제 34.
+a = input('숫자를 입력하시오 문자열로 저장됩니다')
+sum = 0
+
+for i in range(0, len(a)):
+    sum = sum + int(a[i])
+
+print(sum)
+
+문제 35.
+l = 31
+sum = 0
+n = 0
+
+while True:
+    a = int(input('유저1) 베스킨라빈스 게임: 숫자를 입력하세요. '))
+    sum = sum + a
+    n = l - sum
+    print('남은 숫자 = ',n)
+    if n < 1:
+        print('유저 1님 당첨되셨습니다')
+        break
+
+    b = int(input('유저2) 베스킨라빈스 게임: 숫자를 입력하세요. '))
+    sum = sum + b
+    n = l - sum
+    print('남은 숫자 = ',n)
+    if l < n:
+        print('유저 2님 당첨되셨습니다')
+        break
+
+문제 36.
+import turtle
+
+for i in range(0, 6):
+    turtle.circle(50)
+    turtle.left(60)

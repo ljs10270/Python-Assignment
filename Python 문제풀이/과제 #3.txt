@@ -1,0 +1,135 @@
+<과제 #3>
+
+문제 18.
+a = 1000
+b = 2000
+
+n1 = int(input('구매하고 싶은 연필 개수 입력 : '))
+n2 = int(input('구매하고 싶은 볼펜 개수 입력 : '))
+
+sum = (a * n1) + (b * n2)
+if sum >= 10000 :
+    d = sum * 0.1
+    sum = sum - d
+    print('10% 할인된 가격으로 가격은 ', sum,'원 입니다')
+
+else :
+    print('가격은 ', sum,'원 입니다')
+
+문제 19.
+import random
+
+c = random.randint(1,2)
+
+if c == 1 :
+    print('중국요리 선택되었음')
+    
+else :
+    print('일본요리 선택되었음')
+
+
+문제 20.
+a = input('사용할 id 입력하시오 (10글자까지 허용) : ')
+
+if len(a) > 10 :
+    print('회원가입 실패: id 길이가 10을 초과')
+
+elif len(a) <= 10 :
+    b = input('사용할 password 입력하시오 (10글자까지 허용) : ')
+
+    if len(b) > 10 :
+        print('회원가입 실패: password 길이가 10을 초과')
+
+    else:
+        print('회원가입 완료')
+
+문제 21.
+id = "abc"
+ps = "123"
+
+a = input('id 입력하시오 : ')
+
+if a != id :
+    print('로그인 실패 : id 오류')
+
+elif a == id :
+    b = input('password 입력하시오 : ')
+
+    if b != ps :
+        print('로그인 실패: password 오류')
+
+    else:
+        print('로그인 성공')
+
+문제 22.
+sbs = 5
+kbs = 7
+mbc = 11
+ebs = 13
+
+l = [5, 7, 11, 13]
+
+a = int(input('채널 번호를 입력하시오 : '))
+
+if a in l :
+    if a == sbs :
+        print('SBS')
+
+    elif a == kbs :
+        print('KBS')
+
+    elif a == mbc :
+        print('MBC')
+
+    elif a == ebs :
+        print('EBS')
+
+else:
+    print('다시 입력하시오')
+
+문제 23.
+a = int(input('첫번째 정수 입력 : '))
+if a > 0 :
+    b = int(input('두번째 정수 입력 : '))
+    if b > 0 :
+        c = int(input('세번째 정수 입력 : '))
+        if c > 0 :
+            sum = a + b + c
+
+            if sum % 2 == 0 :
+                print('가장 큰 수는 ',max(a, b, c))
+
+            else :
+                print('합은 ',sum)
+
+        else :
+            print('양의 정수만 입력 가능합니다.')
+            
+    else :
+        print('양의 정수만 입력 가능합니다.')
+
+else :
+    print('양의 정수만 입력 가능합니다.')
+ 
+문제 24.
+a = int(input('십진수를 입력하시오. : '))
+
+print('이진수는 ',bin(a), '입니다')
+
+문제 25.
+import random
+
+a = random.randint(1, 100)
+
+while True :
+    b = int(input('추측하는 숫자를 입력하시오 : '))
+
+    if a > b :
+        print('정답은 입력하신 숫자보다 큽니다')
+
+    elif a < b :
+        print('정답은 입력하신 숫자보다 작습니다')
+
+    else :
+        print('정답입니다 입력한 숫자는 ',a,'입니다.')
+        break

@@ -1,0 +1,97 @@
+<과제 #1>
+문제 1.
+import turtle
+
+t = turtle.Turtle()
+
+for i in range(3):
+    t.forward(200)
+    t.left(360/3)
+
+문제 2.
+import turtle
+
+turtle.color("sky blue")
+turtle.pensize(width =10)
+turtle.circle(50)
+turtle.penup()
+turtle.goto(120,0)
+turtle.pendown()
+turtle.color("black")
+turtle.circle(50)
+turtle.penup()
+turtle.goto(240,0)
+turtle.pendown()
+turtle.color("red")
+turtle.circle(50)
+turtle.penup()
+turtle.goto(180,-60)
+turtle.pendown()
+turtle.color("green")
+turtle.circle(50)
+turtle.penup()
+turtle.goto(60,-60)
+turtle.pendown()
+turtle.color("yellow")
+turtle.circle(50)
+turtle.penup()
+
+문제 3.
+import turtle
+
+def recursion(n):
+    if(n == 0):
+        return 0
+
+    if(n == 1 | n == 2):
+        return 1
+
+    return recursion(n-1) + recursion(n-2)
+
+for i in range(0, 7, 1):
+    turtle.circle(recursion(i))
+
+문제 4.
+import turtle
+import random
+
+t = turtle.Turtle()
+
+t.shape('turtle')
+
+for i in range(0, 10, 1):
+    a = random.randrange(1,100)
+    b = random.randrange(0, 360)
+
+    t.forward(a)
+    t.setheading(b)
+   
+문제 5.
+a = input('경기장은 어디입니까?')
+b = input('이긴팀은 어디입니까?')
+c = input('진 팀은 어디입니까?')
+d = input('우수선수는 누구입니까?')
+e = input('스코어는 몇 대 몇 입니까?')
+
+print('=============================================')
+print('오늘 ' + a + ' 에서 야구경기가 열렸습니다.')
+print(b + ' 과 ' + c + ' 은 치열한 공방전을 펼쳤습니다. ')
+print(d + ' 이 맹활약을 하였습니다.')
+print('결국 ' + b + ' 가 ' + c + ' 를 ' + e + ' 로 이겼습니다')
+print('=============================================')
+
+문제 6.
+a = 4123 * 19 + 15
+
+if a // 19 == 4123 :
+    print('몫 true')
+
+if a % 19 == 15 :
+    print('나머지 ture')
+
+문제 7.
+for i in range(10000, 99999, 1) :
+    if i % 17 == 0 :
+        sum = i
+
+print(sum)

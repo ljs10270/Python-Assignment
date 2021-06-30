@@ -1,0 +1,163 @@
+<과제 #7>
+문제 48.
+for i in range(2,10):
+    print("<",i,"단 >")
+    for j in range(1,10):
+        print(i,"*",j,"=",i*j)
+
+문제 49.
+for i in range(9,1,-1):
+    for j in range(1,10):
+        print(i,"*",j,"=",i*j)
+
+문제 50.
+for i in range(2,10):
+    for j in range(1,10):
+        print(i,"*",j,"=",i*j)
+
+i = 2
+j = 1
+while True:
+    if j >= 10 :
+        j = 1
+        i = i + 1
+        if i != 10:
+            print(i,"*",j,"=",i*j)
+        else:
+            break
+    else:
+        print(i,"*",j,"=",i*j)
+        j = j + 1
+
+문제 51.
+while True:
+    a = input('문자입력($입력시 종료) :')
+
+    if len(a) >= 2:
+        print('1개의 문자만 입력하세요')
+    else:
+        if a == '$':
+            print('종료합니다')
+            break;
+        print(a)
+
+문제 52.
+sum = 0
+for i in range(1, 100):
+    sum += i
+    if sum >= 1000:
+        print(i)
+        break
+
+sum = 0
+i = 1
+while True :
+    sum += i
+
+    if sum >= 1000:
+        print(i)
+        break
+    else:
+        i = i + 1
+
+문제 53.
+for b in range(1,6):
+    for m in range(7-b,0,-1):
+        print(" ",end='')
+    for i in range(1,b*2):
+        print("★",end='')
+    print("")
+for c in range(6,0,-1):
+    for m in range(c-8,1,1):
+        print(" ",end='')
+    for i in range(1,c*2-4):
+        print("★",end='')
+    print("")
+
+문제 54.
+a = ["바나나", "사과", "배"]
+b = ["스파게티", "곱창", "치킨"]
+c = a + b
+print(c)
+c[2] = c[2].replace('배',"포도")
+print(c)
+del(c[len(c)-1])
+print(c)
+
+문제 55.
+a = ['홍길동', '허난설균', '허균']
+a.append('이황')
+print(a)
+a.insert(a.index('허균'), '허균')
+print(a)
+print(a.count('허균'))
+del(a[a.index('홍길동')])
+print(a)
+del(a[1])
+print(a)
+a.sort(reverse=True)
+print(a)
+
+문제 56.
+a = (1,2,[3,4],5)
+b = (6,7,8)
+c = a + b
+print(c)
+
+<과제 #8>
+문제 57,58 ( 문제가 같음)
+print('문제 1')
+a = {'name':'이재선', 'phone':'010-8925-9459', 'job':'대학생', 'address':'인천'}
+print(a)
+print('문제 2')
+b = {}
+b['공자'] = [4,3,2,4,2]
+b['맹자'] = [1,2,3,4,5]
+b['순자'] = [5,4,3,2,1]
+print(b)
+
+문제 59.
+a = {'서울':'세종대왕', '파주':'윤관', '성남':'이집'}
+print(a['성남'])
+del a['성남']
+print(a)
+a['남양주'] = '정약용'
+print(a)
+
+문제 60.
+a = ['risk', 'issue', 'test', 'maintenance', 'maturity']
+b = ['security', 'plan', 'design', 'systematic', 'safety']
+c = ['maintenance', 'verification', 'validation']
+
+for i in a:
+    if i == 'maintenance' and len(a) >= 5:
+        print(a)
+        break
+for j in b:
+    if j == 'maintenance' and len(b) >= 5:
+        print(b)
+        break
+for k in c:
+    if k == 'maintenance' and len(c) >= 5:
+        print(c)
+        break
+
+문제 61.
+a = ['r','e']
+b = ['s','e','r','v','e']
+c = a + b
+print(c)
+c[0] = c[0].replace('r','o')
+c[1] = c[1].replace('e','b')
+print(c)
+
+문제 62.
+import random
+
+week = ['월','화','수','목','금','토','일']
+random.shuffle(week)
+print(week)
+c = int(input('0~6까지의 숫자를 입력하시오 : '))
+print('상담요일은',week[c],'요일 입니다')
+
+

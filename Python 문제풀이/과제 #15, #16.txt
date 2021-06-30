@@ -1,0 +1,392 @@
+<과제 #15>
+문제 107.
+class Calculator:
+    def sum(self, x, y):
+        return x+y
+    def minus(self, x, y):
+        return x-y
+    def multiply(self, x, y):
+        return x*y
+    def divide(self, x, y):
+        return x/y
+
+calc = Calculator()
+print(calc.sum(10,5))
+print(calc.minus(10,5))
+print(calc.multiply(10,5))
+print(calc.divide(10,5))
+
+문제 108.
+import turtle
+
+class A:
+    a = None
+
+    def __init__(self):
+        self.a = turtle.Turtle()
+
+    def bmove(self, b, c):
+        self.a.forward(b)
+        self.a.left(c)
+        self.a.forward(b)
+
+a = A()
+b = A()
+b.bmove(50,90)
+
+문제 109.
+from tkinter import *
+
+class A:
+    a = None
+
+    def __init__(self, b):
+        self.a = Tk()
+        self.a.title(b)
+        self.a.mainloop()
+
+a = A("1번 창")
+b = A("2번 창")
+
+문제 110.
+import turtle
+
+class Turtle:
+    a = None
+
+    def __init__(self):
+        self.a = turtle.Turtle()
+
+class Tt(Turtle):
+        pass
+
+a = Tt()
+
+문제 111.
+class A:
+    a = None
+    
+    def __init__(self):
+        self.a = "이 인스턴스의 필드 a의 값입니다"
+
+a = A()
+print(a.a)
+
+문제 112.
+class A:
+    a = ""
+    b = None
+    
+    def __init__(self,a,b):
+        self.a = a
+        self.b = b
+        print('이름:',a,', 연차:',b)
+        
+
+    def m1(self):
+        sum = 0
+        
+        if self.b <= 5:
+            sum = 3000 + (self.b * 100)
+            print('직급:사원, 학력을 제외한 연봉은',sum,'입니다')
+        elif 5 < self.b <= 10:
+            sum = 3500 + (self.b * 110)
+            print('직급:대리, 학력을 제외한 연봉은',sum,'입니다')
+        else :
+            sum = 4000 + (self.b * 130)
+            print('직급:과장, 학력을 제외한 연봉은',sum,'입니다')
+
+    def m2(self,a):
+        if a == 4:
+            if self.b <= 5:
+                sum = 4200 + (self.b * 100)
+                print('직급:사원, 연봉은',sum,'입니다')
+                
+            elif 5 < self.b <= 10:
+                sum = 4700 + (self.b * 110)
+                print('직급:대리, 연봉은',sum,'입니다')
+                
+            else :
+                sum = 5200 + (self.b * 130)
+                print('직급:과장, 연봉은',sum,'입니다')
+        else:
+            self.m1()
+
+
+            
+a = A('이재선',6)
+a.m1()
+a.m2(4)
+a.m2(0)
+
+문제 113.
+import turtle
+
+class A:
+    a = None
+
+    def __init__(self):
+        self.a = turtle.Turtle()
+        self.a.shape('circle')
+        self.a.shapesize(3,3)
+
+a = A()
+
+문제 114.
+import turtle
+
+class A:
+    a = None
+
+    def __init__(self):
+        self.a = turtle.Turtle()
+
+    def move(self,b):
+        for i in range(10):
+            self.a.circle(b)
+
+
+a = A()
+b = A()
+c = A()
+a.move(10)
+b.move(20)
+c.move(30)
+
+<과제 #16>
+문제 115.
+import turtle
+import random
+
+class A:
+    a = None
+
+    def __init__(self):
+        self.a = turtle.Turtle()
+        self.a.shape('turtle')
+        self.a.penup()
+        self.a.goto(-300,10)
+        self.a.pendown()
+
+    def move(self):
+        for i in range(10):
+            b = random.randint(1,30)
+            self.a.forward(b)
+        
+
+class B:
+    a = None
+
+    def __init__(self):
+        self.a = turtle.Turtle()
+        self.a = turtle.Turtle()
+        self.a.shape('arrow')
+        self.a.penup()
+        self.a.goto(-300,-10)
+        self.a.pendown()
+
+    def move(self):
+        for i in range(10):
+            b = random.randint(1,30)
+            self.a.forward(b)
+
+
+a = A()
+b = B()
+a.move()
+b.move()
+
+문제 116.
+import turtle
+
+class A:
+    a = None
+    
+    def __init__(self):
+        self.a = turtle.Turtle()
+        self.a.penup()
+        self.a.goto(-200,0)
+        self.a.right(90)
+        self.a.pendown()
+
+    def red(self):
+        self.a.color("red")
+        self.a.begin_fill()
+        self.a.circle(100,180)
+        self.a.circle(-100,180)
+        self.a.left(180)
+        self.a.circle(200,180)
+        self.a.end_fill()
+
+    def blue(self):
+        self.a.color("blue")
+        self.a.begin_fill()
+        self.a.circle(100,180)
+        self.a.circle(-100,180)
+        self.a.circle(-200,180)
+        self.a.end_fill()
+
+a = A()
+a.red()
+a.blue()
+
+문제 117.
+import turtle
+import random
+
+class A:
+    a = None
+
+    def __init__(self,b):
+        self.a = turtle.Turtle()
+        self.a.shape(b)
+        self.a.penup()
+        self.a.goto(random.randint(-300,300), random.randint(-300,300))
+
+    def move(self):
+        for i in range(100):
+            self.a.forward(50)
+            self.a.right(random.randint(1,180))
+        
+
+a = A("turtle")
+b = A("circle")
+a.move()
+
+문제 118.
+import math
+import random
+import turtle
+
+gameover = False
+	
+class A:
+    a = None
+    x = random.randint(10,300)
+    y = random.randint(-180,-10)
+    x1 = x-20
+    x2 = x+20
+    y1 = y+20
+    y2 = y-20
+	
+    def __init__(self, b):
+        self.a = turtle.Turtle()
+        self.a.shape(b)
+        self.a.penup()
+
+def triger(a,c,b):
+    r = math.radians(c)	
+	
+    for t in range(10000):
+		
+	x = b*math.cos(r)*0.5*t-360
+	y = b*math.sin(r)*0.5*t-0.5*9.8*0.25*t*t-180
+	a.a.goto(x,y)
+
+	if a.x1<=x and x<=a.x2 and a.y2<=y and y<=a.y1:
+		print("성공")
+		gameover = True
+		break
+
+	if x<-400 or x>400 or y<-200 or y>200:
+		print("실패")
+		break
+    
+a = A("circle")
+b = A("turtle")
+a.a.goto(a.x,a.y)
+b.a.goto(-360,-180)
+b.a.pendown()
+c = int(input('발사 각도를 입력해주세요 : '))
+d = int(input('발사 세기를 입력해주세요 : '))
+triger(b,c,d)
+
+문제 119.
+import math
+import random
+import turtle
+
+gameover = False
+	
+class A:
+    a = None
+    x = 270
+    y = 0
+    yup = 180
+    ydown = -180
+    x1 = x-20
+    x2 = x+20
+    y1 = y+20
+    y2 = y-20
+	
+    def __init__(self, b):
+        self.a = turtle.Turtle()
+        self.a.shape(b)
+        self.a.penup()
+
+    def move(self):
+        while True:
+            self.a.goto(self.x, self.yup)
+            self.a.goto(self.x, self.ydown)
+            
+            global gameover
+            if gameover == True:
+                break
+
+def triger(a,c,b):
+    r = math.radians(c)	
+	
+    for t in range(10000):
+		
+	x = b*math.cos(r)*0.5*t-360
+	y = b*math.sin(r)*0.5*t-0.5*9.8*0.25*t*t-180
+	a.a.goto(x,y)
+
+	if a.x1<=x and x<=a.x2 and a.y2<=y and y<=a.y1:
+		print("성공")
+		gameover = True
+		break
+
+	if x<-400 or x>400 or y<-200 or y>200:
+		print("실패")
+		break
+    
+a = A("circle")
+b = A("turtle")
+a.a.goto(a.x,a.y)
+a.move()
+b.a.goto(-360,-180)
+b.a.pendown()
+c = int(input('발사 각도를 입력해주세요 : '))
+d = int(input('발사 세기를 입력해주세요 : '))
+triger(b,c,d)
+
+문제 120
+import turtle
+import random
+
+turtle.colormode(255)
+class A:
+    a = None
+
+    def __init__(self,b):
+        self.a = turtle.Turtle()
+        self.a.shape(b)
+        self.a.penup()
+        self.a.color(random.randint(0,255),random.randint(0,255),random.randint(0,255))
+        self.a.turtlesize(random.randint(1,10))
+        self.a.speed(random.randint(0,10))
+        self.a.goto(random.randint(-300,300), random.randint(-300,300))
+        self.move()
+
+    def move(self):
+        for i in range(10):
+            self.a.forward(50)
+            self.a.right(random.randint(1,180))
+        
+
+a = A("circle")
+b = A("circle")
+c = A("circle")
+d = A("circle")
+e = A("circle")
